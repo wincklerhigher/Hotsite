@@ -1,10 +1,10 @@
 $(document).ready(function () {
     $('#contact-form').submit(function (e) {
-        e.preventDefault();
-
-        alert('Mensagem enviada com sucesso!');
+        e.preventDefault();        
 
         $('#contact-form')[0].reset();
+
+        alert('Mensagem enviada com sucesso!');
     });
 
     $('.popup-link').click(function (e) {
