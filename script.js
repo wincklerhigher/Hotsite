@@ -2,7 +2,7 @@ $(document).ready(function () {
     $('#contact-form').submit(function (e) {
         e.preventDefault();
 
-        alert('Mensagem enviada com sucesso! (Esta é uma mensagem fictícia)');
+        alert('Mensagem enviada com sucesso!');
 
         $('#contact-form')[0].reset();
     });
