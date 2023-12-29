@@ -1,0 +1,137 @@
+﻿@model Interesse
+@{
+    ViewData["Title"] = "Hotsite";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/hotsite.css" />
+  <title>Iniciativa Saúde da Cidade</title>
+</head>
+<body>
+
+  <div class="content">
+    <header class="header-container">
+      <div class="left-upper">
+        <h1>Iniciativa Saúde da Cidade</h1>
+        <br>
+        <p>Promover uma vida saudável é crucial para o bem-estar individual e coletivo. 
+        Ao adotarmos hábitos saudáveis, fortalecemos nosso corpo e mente, prevenindo doenças e alcançando uma qualidade de vida superior. 
+        A iniciativa da prefeitura é um passo significativo nesse caminho, visando educar, motivar e oferecer recursos para que a comunidade adote escolhas mais saudáveis. 
+        Seja por meio de programas de exercícios, orientações nutricionais ou eventos educativos, 
+        a cidade se compromete a construir um futuro mais saudável e vibrante para todos os seus habitantes. 
+        Juntos, podemos transformar o conceito de saúde em uma realidade acessível a cada cidadão.</p>        
+      </div>    
+       <div class="right-upper">
+        <div class="image-container">                
+          <img src="https://i.imgur.com/uifr5ak.jpg">
+        </div>
+    </header>
+
+     <main class="main-container">
+    <div class="left-lower">
+        <div class="form-container">
+            <div class="contact-form">
+                <h2>Fique em Contato!</h2>
+                <p>Mande uma mensagem e fique por dentro dos eventos.</p>
+                <form id="contact-form" action="/Home/Cadastrar" method="POST">
+                    <div>
+                        <label asp-for="Nome">Nome:</label>
+                        <input asp-for="Nome" />
+                    </div>
+                    <div>
+                        <label asp-for="Email">Email:</label>
+                        <input asp-for="Email" />
+                    </div>
+                    <div>
+                        <label asp-for="Mensagem">Mensagem (opcional):</label>
+                        <textarea asp-for="Mensagem"></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" value="Enviar" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+
+      <div class="right-lower">
+        <div class="popup-links">
+          <a href="#" class="popup-link" data-type="agenda" onclick="openPopup('agenda')">Agenda de eventos</a>
+          <a href="#" class="popup-link" data-type="dicas" onclick="openPopup('dicas')">Dicas de vida saudável</a>
+          <a href="#" class="popup-link" data-type="apoiadores" onclick="openPopup('apoiadores')">Apoiadores</a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="border-top footer text-muted">
+    <div class="container">
+      &#174; 2023 Iniciativa Municipal para o Bem-Estar
+    </div>
+  </footer>
+
+  <div id="popup" class="popup">
+    <div id="popup-content" class="popup-content"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.popup-link').click(function (e) {
+        e.preventDefault();
+        openPopup($(this).data('type'));
+      });
+
+      $(document).click(function (e) {
+        if (!$(e.target).closest('#popup-content').length && !$(e.target).closest('.popup-link').length) {
+          closePopup();
+        }
+      });
+    });
+
+    function openPopup(type) {
+      var popup = $('#popup');
+      var content = $('#popup-content');
+      content.empty();
+
+      if (type === 'agenda') {
+    content.html('<h3>Agenda de Eventos</h3>' +
+        '<p><strong>Data:</strong> 10 de Fevereiro de 2023</p>' +
+        '<p><strong>Evento:</strong> Caminhada da Saúde</p>' +
+        '<p><strong>Descrição:</strong> Junte-se a nós para uma caminhada saudável pela comunidade. Vamos promover a importância do exercício físico para uma vida ativa e vibrante.</p>' +
+        '<p><strong>Data:</strong> 18 de Março de 2023</p>' +
+        '<p><strong>Evento:</strong> Workshop de Nutrição</p>' +
+        '<p><strong>Descrição:</strong> Aprenda sobre escolhas alimentares saudáveis e como incorporar uma dieta equilibrada em sua rotina diária.</p>');
+} else if (type === 'dicas') {
+    content.html('<h3>Dicas de Vida Saudável</h3>' +
+        '<p><strong>Dica 1:</strong> Mantenha-se hidratado! Beba pelo menos 8 copos de água por dia para manter seu corpo funcionando adequadamente.</p>' +
+        '<p><strong>Dica 2:</strong> Adote uma rotina de exercícios. Envolva-se em atividades físicas que você goste, como caminhadas, corridas ou danças.</p>' +
+        '<p><strong>Dica 3:</strong> Alimente-se com cores! Consuma uma variedade de frutas e vegetais para obter uma ampla gama de nutrientes.</p>' +
+        '<p><strong>Dica 4:</strong> Priorize o sono. Garanta uma boa qualidade de sono todas as noites para promover a recuperação e o bem-estar.</p>' +
+        '<p><strong>Dica 5:</strong> Cultive relacionamentos saudáveis. Mantenha conexões sociais significativas para apoiar sua saúde mental.</p>');
+    }
+else if (type === 'apoiadores') {
+    content.html('<h3>Apoiadores</h3>' +
+        '<ul class="apoiadores-list">' +
+        '   <li>Faber-Castell</li>' +
+        '   <li>Natura</li>' +
+        '   <li>Cielo</li>' +
+        '   <li>IBM</li>' +
+        '   <li>Porto Seguro</li>' +
+        '</ul>');
+}
+      popup.fadeIn();
+    }
+
+    function closePopup() {
+      var popup = $('#popup');
+      popup.fadeOut();
+    }
+  </script>
+</body>
+</html>
