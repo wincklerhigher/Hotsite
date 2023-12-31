@@ -13,19 +13,19 @@ header {
     padding: 10px;
 }
 
-.header-container {        
-    max-width: 1200px; 
-    height: auto; 
-    margin: 0 auto; 
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;  
 }
 
 .left-upper {
-    max-width: 600px; 
-    margin: 0 auto;
-    text-align: justify;
+    max-width: 600px;     
+    text-align: left;
 }
 
 .left-upper p {
@@ -38,9 +38,10 @@ header {
 }
 
 .right-upper {
-    width: 50%; 
     box-sizing: border-box;
     padding: 20px;
+    text-align: right;
+    max-width: 50%;
 }
 
 .right-lower {
