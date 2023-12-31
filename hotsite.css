@@ -6,9 +6,9 @@ body {
 }
 
 header {    
-    background-color: #333;
+    background-color: transparent;
     font-weight: bold;
-    color: #ffffff;
+    color: #000;
     text-align: left;
     padding: 20px;
 }
@@ -154,7 +154,7 @@ footer {
 
 /* Adiciona regras para tornar as imagens responsivas */
 .image-container img {
-    max-width: 80%;
+    max-width: auto;
     height: auto;    
 }
 
