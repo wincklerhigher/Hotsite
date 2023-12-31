@@ -14,7 +14,7 @@ header {
 }
 
 .header-container {
-    max-width: 1200px; 
+    max-width: 1400px; 
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -155,7 +155,7 @@ footer {
 
 /* Adiciona regras para tornar as imagens responsivas */
 .image-container img {
-    max-width: 80%;
+    max-width: 100%;
     height: auto;    
 }
 
