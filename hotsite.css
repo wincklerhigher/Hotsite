@@ -154,8 +154,8 @@ footer {
 
 /* Adiciona regras para tornar as imagens responsivas */
 .image-container img {
-    max-width: 80%;
-    height: auto;    
+    max-width: 100%;
+    height: 75%;    
 }
 
 /* Adiciona media queries para layout responsivo */
