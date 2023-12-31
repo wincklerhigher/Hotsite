@@ -17,16 +17,13 @@ header {
     justify-content: space-between;
     align-items: flex-start;
     max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 10px;  
+    max-width: 100%; 
 }
 
 .left-upper {
     max-width: 600px;     
     text-align: justify;
-    margin: 0;    
-    margin-right: -25px;
+    margin: 0;        
 }
 
 .left-upper p {
